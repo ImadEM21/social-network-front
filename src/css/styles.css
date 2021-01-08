@@ -1,0 +1,86 @@
+/* Début balises génériques */
+
+html {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: #FFF;
+}
+
+#root .App {
+    height: 100vh;
+    width: 100%;
+}
+
+/* Fin balises génériques */
+
+/* Début page principale */
+
+#main-page, #login-page, #signup-page {
+    /*
+    background-image: url('../images/galaxy.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    */
+    background: url('../images/galaxy.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* Fin page principale */
+
+/* Début page se connecter et créer un compte */
+
+#login-page {
+    height: 100vh;
+}
+
+.card-style {
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social-icons {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.social-icons svg {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+    .social-icons svg:hover {
+        color: #FFF;
+        cursor: pointer;
+    }  
+
+.input-icons {
+    background-color: #FFC312;
+}
+
+.input-icons svg {
+    width: 50px;
+    color: black;
+    border:0 !important;
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;    
+}
+
+
+/* Fin page se connecter et créer un compte */
