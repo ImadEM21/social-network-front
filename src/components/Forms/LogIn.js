@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import SignUpUser from './Inputs/SignUpUser';
 import RememberUser from './Inputs/RememberUser';
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons';
+import logAndSignUser from '../../api/logAndSignUser';
 
 const LogIn = (props) => {
     const [email, setEmail] = useState('');
@@ -12,8 +13,20 @@ const LogIn = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        alert(`mail: ${email}, password: ${password}, remember: ${remember}`);
-    }
+        
+
+        const user = {
+            email,
+            password
+        };
+
+        logAndSignUser.logInUser(user)
+        .then(res => {
+            alert('Connecté avec succès');
+            console.log(res.data);
+        })
+        .catch(error => console.log(error));
+    };
 
     return ( 
         <Form onSubmit={handleSubmit}>

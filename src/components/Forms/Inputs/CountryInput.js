@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const CountryInput = (props) => {
+
+    const handleChange = e => {
+        props.onValueChange(e.target.value)
+    };
+
     return ( 
         <Form.Group>
             <InputGroup>
@@ -11,7 +16,7 @@ const CountryInput = (props) => {
                     <InputGroup.Text className="input-icons rounded-0">
                         <FontAwesomeIcon icon={props.icon} />
                     </InputGroup.Text>
-                    <FormControl as="select" id="country" name="country" className="rounded-0">
+                    <FormControl as="select" id="countrySelect" name={props.name} value={props.value} className="rounded-0" onChange={handleChange}>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -85,7 +90,7 @@ const CountryInput = (props) => {
                         <option value="Faroe Islands">Faroe Islands</option>
                         <option value="Fiji">Fiji</option>
                         <option value="Finland">Finland</option>
-                        <option value="France" selected>France</option>
+                        <option value="France">France</option>
                         <option value="French Guiana">French Guiana</option>
                         <option value="French Polynesia">French Polynesia</option>
                         <option value="French Southern Territories">French Southern Territories</option>
